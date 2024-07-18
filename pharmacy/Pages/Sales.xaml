@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Shell.NavBarIsVisible="False"
+             FlowDirection="LeftToRight"
+             x:Class="pharmacy.Pages.Sales">
+    <ScrollView>
+        <VerticalStackLayout  Spacing="20">
+        <VerticalStackLayout BackgroundColor="#f3f6fb">
+                <Label  Text="Sales" FontSize="Large" HorizontalOptions="Center" Margin="0,0,0,20"/>
+        </VerticalStackLayout>
+        <VerticalStackLayout Padding="20" Spacing="20">
+                <Frame BackgroundColor="#f3f6fb">
+                    <Entry x:Name="SName"  Placeholder="Name" BackgroundColor="#f3f6fb"/>
+                </Frame>
+                <HorizontalStackLayout Spacing="20" HorizontalOptions="Center">
+                    <Frame BackgroundColor="#f3f6fb">
+                        <Entry Keyboard="Numeric" x:Name="SPrice"  WidthRequest="100" Placeholder="Salary" BackgroundColor="#f3f6fb"/>
+                    </Frame>
+                    <Frame BackgroundColor="#f3f6fb">
+                        <Entry Keyboard="Numeric" x:Name="Que" WidthRequest="100" Placeholder="Quantity" BackgroundColor="#f3f6fb"/>
+                </Frame>
+            </HorizontalStackLayout>
+            
+            <!-- Customer -->
+                <Frame BackgroundColor="#f3f6fb">
+                    <Entry  x:Name="CustomerName"  Placeholder="CustomerName" BackgroundColor="#f3f6fb"/>
+                </Frame>
+
+                <Frame BackgroundColor="#f3f6fb">
+                    <Entry  x:Name="CustomerPhone" Keyboard="Telephone" Placeholder="Phone ex : 01065449056" BackgroundColor="#f3f6fb"/>
+                </Frame>
+                <Frame BackgroundColor="#f3f6fb">
+                    <Entry  x:Name="CustomerID" Keyboard="Numeric" Placeholder="ID" BackgroundColor="#f3f6fb"/>
+                </Frame>
+                <Button BackgroundColor="#416bfd" Text="Add" FontSize="Medium" x:Name="Add" Clicked="Add_Clicked"/>
+            <Button BackgroundColor="#416bfd" Text="Get All " FontSize="Medium" x:Name="GetData" Clicked="GetData_Clicked"  />
+        </VerticalStackLayout>
+            <Grid Padding="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <CollectionView x:Name="GetAllDs" >
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Border BackgroundColor="#f3f6fb" HeightRequest="100" StrokeShape="RoundRectangle 10" Margin="0,0,0,10">
+                                <VerticalStackLayout Padding="10">
+                                    <Label Text="{Binding SId}" />
+                                    <Label Text="{Binding SAlesName}" />
+                                    <Label Text="{Binding SAlesQuantity}" />
+                                    <Label Text="{Binding Salary}" />
+                                    <Label Text="{Binding CustomerName}" />
+                                    <Label Text="{Binding CustomerPhone}" />
+                                </VerticalStackLayout>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+            <VerticalStackLayout Padding="20" >
+                <Button Text="Gard" x:Name="grad" Background="#416bfd" Clicked="grad_Clicked_1" />
+
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="pharmacy.Pages.Orders"
+             Shell.NavBarIsVisible="False"
+             FlowDirection="LeftToRight">
+    <ScrollView>
+        
+    <VerticalStackLayout Spacing="20">
+            <VerticalStackLayout Background="#f3f6fb">
+                <Label Text="Orders" FontSize="Large" HorizontalOptions="Center" Margin="0,0,0,20"/>
+
+            </VerticalStackLayout>
+            <VerticalStackLayout Spacing="20" Padding="20">
+                <HorizontalStackLayout Spacing="20" HorizontalOptions="Center">
+                    <Frame BackgroundColor="#f3f6fb">
+                        <Entry x:Name="OrderName"  WidthRequest="100" Placeholder="Name" BackgroundColor="#f3f6fb"/>
+                    </Frame>
+                    <Frame BackgroundColor="#f3f6fb">
+                        <Entry Keyboard="Numeric" x:Name="OrderQuantity" WidthRequest="100" Placeholder="Quantity " BackgroundColor="#f3f6fb"/>
+                    </Frame>
+                </HorizontalStackLayout>
+                
+            </VerticalStackLayout>
+        <!-- Order Control  -->
+            <HorizontalStackLayout Padding="20" Spacing="10">
+                <Button  BackgroundColor="#416bfd" Text="Add" FontSize="Medium" x:Name="Add" Clicked="Add_Clicked"/>
+                <Button BackgroundColor="#416bfd" Text="Order Control" x:Name="Control" Clicked="Control_Clicked"/>
+                <Button Text="View Orders" Background="#416bfd" FontSize="Medium" x:Name="Get" Clicked="Get_Clicked" />
+
+            </HorizontalStackLayout>
+          
+            <!-- display orders -->
+            <Grid Padding="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <CollectionView x:Name="GetAllDs" >
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Border BackgroundColor="#f3f6fb" HeightRequest="100" StrokeShape="RoundRectangle 10" Margin="0,0,0,10">
+                                <VerticalStackLayout Padding="10">
+                                    <Label Text="{Binding Id}" />
+                                    <Label Text="{Binding Productname}" />
+                                    <Label Text="{Binding Quantity}" />
+                                </VerticalStackLayout>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

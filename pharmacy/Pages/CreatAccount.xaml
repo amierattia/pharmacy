@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="pharmacy.Pages.CreatAccount"
+             Shell.NavBarIsVisible="False"
+             Title="CreatAccount">
+    <VerticalStackLayout Padding="20" Spacing="10">
+        <Label Text="Create Account" HorizontalOptions="Center" FontSize="Medium" FontAttributes="Bold" />
+        <Frame BackgroundColor="#f3f6fb">
+            <Entry Background="#f3f6fb" x:Name="UserName" Keyboard="Email" Placeholder="Email" />
+        </Frame>
+        <Frame BackgroundColor="#f3f6fb">
+            <Entry Background="#f3f6fb" x:Name="First_Name" Placeholder="First Name" />
+        </Frame>
+        <Frame BackgroundColor="#f3f6fb">
+            <Entry Background="#f3f6fb" x:Name="Last_Name" Placeholder="Last Name" />
+        </Frame>
+
+        <Frame BackgroundColor="#f3f6fb">
+            <Entry x:Name="Pass"  Placeholder="Password" IsPassword="True" Background="#f3f6fb"/>
+        </Frame>
+
+        <Button x:Name="Save" Clicked="Save_Clicked" Text="Save" BackgroundColor="#416bfd" />
+
+        <ActivityIndicator x:Name="looding"
+       
+        />
+
+
+
+    </VerticalStackLayout>
+</ContentPage>

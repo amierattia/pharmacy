@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="pharmacy.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:pharmacy"
+    xmlns:Page="clr-namespace:pharmacy.Pages"
+    Shell.FlyoutWidth="250"
+    >
+
+    <ShellContent
+         Title="Home"
+         Icon="home.png"
+         ContentTemplate="{DataTemplate Page:LogInPage}"
+         Route="LogInPage" />
+
+  
+        <TabBar>
+            <ShellContent
+                Title="Main"
+                Icon="home.png"
+                ContentTemplate="{DataTemplate local:MainPage}"
+                Route="MainPage"  />
+
+            <ShellContent
+                Title="About"
+                Icon="information.png"
+                ContentTemplate="{DataTemplate local:About}"
+                Route="AboutPage" />
+        </TabBar>
+
+  
+
+</Shell>

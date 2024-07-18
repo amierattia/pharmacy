@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="pharmacy.About"
+             Shell.NavBarIsVisible="False"
+             >
+    <ScrollView>
+        
+    
+    <VerticalStackLayout>
+        <VerticalStackLayout   Background="#f3f6fb" >
+            <Label  HorizontalOptions="Center" Margin="0,10,0,10" Text="Developers" FontSize="Large" FontAttributes="Bold" />
+        </VerticalStackLayout>
+            <Grid  Padding="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <CollectionView x:Name="GetAllData">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate >
+                            <Frame Margin="0,0,0,10" BackgroundColor="#f3f6fb" CornerRadius="10">
+                                <AbsoluteLayout>
+                                    <Label FontSize="15" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="1,.5" Text="{Binding Name}"/>
+                                    <Frame HeightRequest="50" WidthRequest="50" CornerRadius="50">
+                                        <Image Source="{Binding Image}" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0,.5" HeightRequest="50" WidthRequest="50" />
+                                    </Frame>
+                                </AbsoluteLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+    </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
